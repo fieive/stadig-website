@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/sofieiversen/Downloads/**)",
+      "WebSearch",
+      "Bash(mkdir -p /Users/sofieiversen/Desktop/Stadig/claude_prosj/stadig_website/.claude/skills)",
+      "Bash(mv /Users/sofieiversen/.claude/skills/braindump.md /Users/sofieiversen/Desktop/Stadig/claude_prosj/stadig_website/.claude/skills/braindump.md)"
+    ]
+  }
+}
