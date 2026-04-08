@@ -25,6 +25,12 @@ logoer/           # Logo assets
 - All styles are inline `<style>` blocks in each HTML file
 - Single-page layout with JS-driven page switching (`.page` / `.page.active`)
 
+## GitHub
+- After every code change, always commit and push to GitHub automatically
+- Remote: https://github.com/fieive/stadig-website
+- Branch: main
+- Use a short descriptive commit message describing what changed
+
 ## design style
 - when you look at a new webpage for scandinavian design, look at the file: /Users/sofieiversen/Desktop/Stadig/claude_prosj/stadig_website/scandinavian_design.md
-- 
+
