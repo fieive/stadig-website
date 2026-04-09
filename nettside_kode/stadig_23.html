@@ -98,32 +98,15 @@
     color: var(--text-muted);
     text-decoration: none;
     cursor: pointer;
-    transition: color 0.25s ease, background 0.25s ease;
+    transition: color 0.2s ease, background 0.2s ease;
     padding: 6px 15px;
     border-radius: 50px;
     display: block;
-    position: relative;
-    z-index: 0;
   }
 
-  .nav-links a::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50px;
-    background: #410709;
-    filter: blur(9px);
-    transform: scale(1.15);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: -1;
-  }
-  .nav-links a:hover::before {
-    opacity: 0.72;
-  }
   .nav-links a:hover {
-    color: var(--bg);
-    background: transparent;
+    color: #410709;
+    background: rgba(65, 7, 9, 0.08);
   }
   .nav-links a.active {
     color: #410709;
@@ -490,30 +473,6 @@
   }
 
   /* ═══════════════════════════════════════
-     PAGE 3 — STUDIO (Kommer snart)
-  ═══════════════════════════════════════ */
-  #page-studio {
-    background: var(--bg);
-    min-height: 100vh;
-  }
-
-  .coming-soon-hero {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .coming-soon-hero h1 {
-    font-family: 'Manrope', sans-serif;
-    font-weight: 300;
-    font-size: clamp(36px, 6vw, 66px);
-    color: var(--text);
-    letter-spacing: 0.02em;
-    opacity: 0.5;
-  }
-
-  /* ═══════════════════════════════════════
      PAGE 4 — STADIG (Om)
   ═══════════════════════════════════════ */
   #page-stadig {
@@ -713,7 +672,6 @@
   <a class="nav-logo-img" onclick="showPage('design')"><img src="data:image/png;base64,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BwAAgCDDHAAAAIIMcwAAAAgyzAEAACDIMAcAAIAgwxwAAACCDHMAAAAIMswBAAAgyDAHAACAIMMcAAAAggxzAAAACDLMAQAAIMgwBwAAgCDDHAAAAIIMcwAAAAgyzAEAACDIMAcAAIAgwxwAAACCDHMAAAAIMswBAAAgyDAHAACAIMMcAAAAggxzAAAACDLMAQAAIMgwBwAAgCDDHAAAAIIMcwAAAAgyzAEAACDIMAcAAIAgwxwAAACCDHMAAAAIMswBAAAgyDAHAACAIMMcAAAAggxzAAAACDLMAQAAIMgwBwAAgCDDHAAAAIIMcwAAAAgyzAEAACDIMAcAAIAgwxwAAACCDHMAAAAIMswBAAAgyDAHAACAIMMcAAAAggxzAAAACDLMAQAAIMgwBwAAgCDDHAAAAIIMcwAAAAgyzAEAACDIMAcAAIAgwxwAAACCDHMAAAAIMswBAAAgyDAHAACAIMMcAAAAggxzAAAACDLMAQAAIMgwBwAAgCDDHAAAAIIMcwAAAAgyzAEAACDIMAcAAIAgwxwAAACCDHMAAAAIMswBAAAgyDAHAACAIMMcAAAAggxzAAAACDLMAQAAIMgwBwAAgCDDHAAAAIIMcwAAAAgyzAEAACDIMAcAAIAgwxwAAACCDHMAAAAIMswBAAAgyDAHAACAIMMcAAAAggxzAAAACDLMAQAAIOj/AWyBkrd6xx/cAAAAAElFTkSuQmCC" alt="stadig" style="height:36px;width:auto;display:block;"></a>
     <ul class="nav-links">
       <li><a onclick="showPage('galleri')" id="nav-galleri">Design</a></li>
-      <li><a onclick="showPage('studio')" id="nav-studio">Studio</a></li>
       <li><a onclick="showPage('stadig')" id="nav-stadig">Stadig</a></li>
     </ul>
   </div>
@@ -759,6 +717,41 @@
             <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.75;font-family:'Inter',sans-serif;font-weight:300;">Helhetlig merkevareidentitet og applikasjonsdesign for en moderne aktivitetsplattform.</p>
           </div>
           <button style="border:0.8px solid rgba(255,255,255,0.5);border-radius:50px;background:transparent;color:rgba(255,255,255,0.75);font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.06em;padding:8px 20px;cursor:pointer;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(255,255,255,0.9)';this.style.color='rgba(255,255,255,1)'" onmouseleave="this.style.borderColor='rgba(255,255,255,0.5)';this.style.color='rgba(255,255,255,0.75)'">Se mer &#8594;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Iversen Bygg preview card -->
+  <div style="padding: 12px 48px 0;" class="fade-in">
+    <div onclick="openIversenBygg()" style="background:#1A2820;border-radius:16px;overflow:hidden;cursor:pointer;transition:transform 0.4s ease;border:1px solid rgba(166,124,46,0.2);" onmouseenter="this.style.transform='translateY(-3px)'" onmouseleave="this.style.transform='translateY(0)'">
+      <div style="padding:40px;display:grid;grid-template-columns:1fr 240px;gap:36px;align-items:center;">
+        <!-- Icon grid preview -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;">
+          <!-- Tilbygg -->
+          <div style="background:rgba(240,235,224,0.06);border-radius:14px;padding:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 100 100" fill="none" style="width:48px;height:48px;"><path d="M 8 88 L 8 50 L 34 22 L 60 50 L 60 88 Z" fill="#F0EBE0"/><rect x="55" y="50" width="26" height="38" fill="#F0EBE0"/><circle cx="77" cy="80" r="13" fill="#1A2820"/><circle cx="77" cy="80" r="11" fill="none" stroke="#F0EBE0" stroke-width="2"/><line x1="71" y1="80" x2="83" y2="80" stroke="#F0EBE0" stroke-width="2" stroke-linecap="round"/><line x1="77" y1="74" x2="77" y2="86" stroke="#F0EBE0" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <!-- Garasje -->
+          <div style="background:rgba(240,235,224,0.06);border-radius:14px;padding:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 100 100" fill="none" style="width:48px;height:48px;"><rect x="5" y="5" width="90" height="90" rx="18" stroke="#F0EBE0" stroke-width="7" fill="none"/><path d="M 18 74 L 18 54 Q 18 47 25 47 L 30 47 L 39 35 L 61 35 L 70 47 L 75 47 Q 82 47 82 54 L 82 74 Z" fill="#F0EBE0"/><circle cx="30" cy="62" r="6" fill="#1A2820"/><circle cx="70" cy="62" r="6" fill="#1A2820"/></svg>
+          </div>
+          <!-- Oppussing -->
+          <div style="background:rgba(240,235,224,0.06);border-radius:14px;padding:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 100 100" fill="none" style="width:48px;height:48px;"><path d="M 35 42 C 35 26 65 26 65 42" fill="none" stroke="#F0EBE0" stroke-width="8" stroke-linecap="round"/><rect x="10" y="41" width="80" height="50" rx="12" fill="#F0EBE0"/><rect x="33" y="56" width="12" height="12" rx="3" fill="#1A2820"/><rect x="55" y="56" width="12" height="12" rx="3" fill="#1A2820"/></svg>
+          </div>
+          <!-- Baderom -->
+          <div style="background:rgba(240,235,224,0.06);border-radius:14px;padding:16px;aspect-ratio:1;display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 100 100" fill="none" style="width:48px;height:48px;"><rect x="5" y="5" width="90" height="90" rx="18" stroke="#F0EBE0" stroke-width="7" fill="none"/><path d="M 20 43 A 30 30 0 0 1 80 43 Z" fill="#F0EBE0"/><ellipse cx="31" cy="58" rx="4" ry="5.5" fill="#F0EBE0"/><ellipse cx="50" cy="58" rx="4" ry="5.5" fill="#F0EBE0"/><ellipse cx="69" cy="58" rx="4" ry="5.5" fill="#F0EBE0"/><ellipse cx="31" cy="73" rx="4" ry="5.5" fill="#F0EBE0"/><ellipse cx="50" cy="73" rx="4" ry="5.5" fill="#F0EBE0"/><ellipse cx="69" cy="73" rx="4" ry="5.5" fill="#F0EBE0"/></svg>
+          </div>
+        </div>
+        <!-- Description -->
+        <div style="display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end;gap:20px;padding-left:8px;">
+          <div style="text-align:right;">
+            <p style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(166,124,46,0.7);margin-bottom:12px;font-weight:500;font-family:'Inter',sans-serif;">Nettside & Merkevare</p>
+            <p style="font-family:'Manrope',sans-serif;font-weight:300;font-size:21px;color:#F0EBE0;line-height:1.2;margin-bottom:12px;">Iversen Bygg</p>
+            <p style="font-size:13px;color:rgba(240,235,224,0.5);line-height:1.75;font-family:'Inter',sans-serif;font-weight:300;">Visuell identitet og nettside for et lokalt byggefirma i Lofoten.</p>
+          </div>
+          <button style="border:0.8px solid rgba(166,124,46,0.6);border-radius:50px;background:transparent;color:rgba(166,124,46,0.85);font-family:'Inter',sans-serif;font-size:12px;letter-spacing:0.06em;padding:8px 20px;cursor:pointer;transition:all 0.3s;" onmouseenter="this.style.borderColor='rgba(166,124,46,1)';this.style.color='rgba(166,124,46,1)'" onmouseleave="this.style.borderColor='rgba(166,124,46,0.6)';this.style.color='rgba(166,124,46,0.85)'">Se mer &#8594;</button>
         </div>
       </div>
     </div>
@@ -847,12 +840,27 @@
       <div class="project-name">Tindeq</div>
       <div class="project-desc">Kommer snart.</div>
     </div>
-    <div class="project-card fade-in" style="opacity:0.4;cursor:default;">
-      <div class="project-img"><div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;">
-        <span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Kommer snart</span>
-      </div></div>
-      <div class="project-name">Iversen bygg</div>
-      <div class="project-desc">Kommer snart.</div>
+    <div class="project-card fade-in" onclick="openIversenBygg()" style="cursor:pointer;">
+      <div class="project-img" style="background:#1A2820;">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:24px;">
+          <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:180px;opacity:0.85;">
+            <g>
+              <path d="M 8 105 L 8 52 L 58 20 L 58 73 Z" stroke="#A67C2E" stroke-width="3" fill="none" stroke-linejoin="round"/>
+              <path d="M 8 52 L 58 20 L 96 40 L 46 72 Z" stroke="#A67C2E" stroke-width="3" fill="none" stroke-linejoin="round"/>
+              <path d="M 58 20 L 58 73 L 96 93 L 96 40 Z" stroke="#A67C2E" stroke-width="3" fill="none" stroke-linejoin="round"/>
+              <line x1="18" y1="100" x2="18" y2="58" stroke="#A67C2E" stroke-width="1.5" opacity=".5"/>
+              <line x1="32" y1="94" x2="32" y2="46" stroke="#A67C2E" stroke-width="1.5" opacity=".5"/>
+              <line x1="46" y1="88" x2="46" y2="34" stroke="#A67C2E" stroke-width="1.5" opacity=".5"/>
+            </g>
+            <line x1="108" y1="25" x2="108" y2="115" stroke="#A67C2E" stroke-width="2"/>
+            <text x="118" y="58" font-family="Manrope,sans-serif" font-size="18" font-weight="600" fill="#A67C2E">Iversen</text>
+            <text x="118" y="80" font-family="Manrope,sans-serif" font-size="18" font-weight="600" fill="#A67C2E">Bygg</text>
+            <text x="118" y="99" font-family="Manrope,sans-serif" font-size="14" font-weight="600" fill="#A67C2E">AS</text>
+          </svg>
+        </div>
+      </div>
+      <div class="project-name">Iversen Bygg</div>
+      <div class="project-desc">Nettside og merkevareidentitet for et lokalt byggefirma i Lofoten.</div>
     </div>
     <div class="project-card fade-in" style="opacity:0.4;cursor:default;">
       <div class="project-img"><div class="img-placeholder" style="display:flex;align-items:center;justify-content:center;">
@@ -955,6 +963,10 @@
   // ─── PAGE NAVIGATION ───
   function openNordquest() {
     window.open('nordquest.html', '_blank');
+  }
+
+  function openIversenBygg() {
+    window.open('iversen_bygg.html', '_blank');
   }
 
   function showPage(id) {
