@@ -63,51 +63,11 @@ body{font-family:'Inter',sans-serif;background:var(--rh-bg);color:var(--rh-dark)
 .type-sample-mono{font-family:'Courier Prime',monospace;font-size:clamp(13px,1.4vw,17px);color:var(--rh-dark);line-height:1.8;opacity:.7;}
 .type-name{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rh-muted);margin-top:24px;font-family:'Inter',sans-serif;}
 
-/* ─── MOCKUP SHELL ─── */
-.mockup{border-radius:20px;overflow:hidden;border:1px solid rgba(48,2,2,.12);box-shadow:0 32px 80px rgba(48,2,2,.1);}
-.mock-bar{background:rgba(48,2,2,.04);padding:12px 20px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(48,2,2,.07);}
-.mock-dot{width:10px;height:10px;border-radius:50%;background:rgba(48,2,2,.12);}
-.mock-url{margin-left:12px;background:rgba(48,2,2,.06);border-radius:6px;padding:4px 16px;font-size:11px;color:rgba(48,2,2,.4);letter-spacing:.04em;flex:1;max-width:280px;font-family:'Inter',sans-serif;}
-
-/* ─── RIHA SITE — LANDING ─── */
-.rm-nav{padding:20px 40px;display:flex;justify-content:space-between;align-items:flex-start;background:#EAE7E2;border-bottom:1px solid rgba(48,2,2,.08);}
-.rm-nav-link{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.08em;color:rgba(48,2,2,.6);}
-.rm-nav-brand{text-align:center;display:flex;flex-direction:column;gap:5px;}
-.rm-nav-brand h3{font-family:'EB Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.1em;color:#300202;}
-.rm-nav-brand span{font-family:'EB Garamond',serif;font-style:italic;font-size:11px;color:rgba(48,2,2,.5);letter-spacing:.02em;}
-.rm-hero{background:linear-gradient(155deg,#B0D7C2 0%,#BFD0B5 50%,#C2CBB7 80%,#B8C4AB 100%);padding:60px 60px 90px;min-height:420px;display:flex;align-items:flex-end;}
-.rm-hero-content{max-width:420px;}
-.rm-tagline-reg{font-family:'EB Garamond',serif;font-weight:400;font-size:22px;color:#300202;line-height:1.3;}
-.rm-tagline-it{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:44px;color:#300202;line-height:1.0;display:block;margin-top:4px;}
-.rm-divider-line{width:100%;max-width:360px;height:1px;background:rgba(48,2,2,.2);margin:22px 0;}
-.rm-body-text{font-family:'Inter',sans-serif;font-size:12px;line-height:1.75;color:rgba(48,2,2,.7);max-width:285px;font-weight:300;}
-.rm-btn{display:inline-block;border:1px solid rgba(48,2,2,.4);padding:9px 22px;font-size:11px;font-family:'Inter',sans-serif;letter-spacing:.06em;color:#300202;margin-top:22px;cursor:pointer;}
-.rm-foot{padding:20px 40px;background:#EAE7E2;border-top:1px solid rgba(48,2,2,.08);text-align:center;}
-.rm-foot p{font-family:'Inter',sans-serif;font-size:10px;color:rgba(48,2,2,.4);line-height:1.9;letter-spacing:.03em;}
-.rm-foot em{font-family:'EB Garamond',serif;font-size:11px;}
-
-/* ─── RIHA SITE — BOOK PAGE ─── */
-.rm-book-content{display:grid;grid-template-columns:1fr 1fr;min-height:500px;}
-.rm-book-l{padding:56px 48px;background:linear-gradient(155deg,#B0D7C2 0%,#BFD0B5 50%,#C2CBB7 80%,#B8C4AB 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:16px;}
-.rm-cover{width:160px;height:224px;border-radius:3px;box-shadow:6px 10px 32px rgba(0,0,0,.35);overflow:hidden;flex-shrink:0;}
-.rm-cover-inner{width:100%;height:100%;background:linear-gradient(160deg,#1c2f18 0%,#2d4b1e 28%,#3a5525 48%,#1a2415 68%,#0f1a0b 100%);display:flex;flex-direction:column;justify-content:space-between;padding:14px 12px 12px;position:relative;overflow:hidden;}
-.rm-cover-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(180,138,58,.3) 0%,transparent 65%);pointer-events:none;}
-.rm-cover-inner::after{content:'';position:absolute;top:15%;left:-25%;width:150%;height:55%;background:radial-gradient(ellipse,rgba(200,158,65,.2) 0%,transparent 60%);transform:rotate(-12deg);pointer-events:none;}
-.rm-cover-author{font-family:'Inter',sans-serif;font-size:6.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(220,200,175,.65);font-weight:500;}
-.rm-cover-middle{display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:1;}
-.rm-cover-sub-top{font-family:'EB Garamond',serif;font-style:italic;font-size:7px;color:rgba(220,200,168,.55);letter-spacing:.05em;}
-.rm-cover-title{font-family:'EB Garamond',serif;font-size:16px;font-weight:500;letter-spacing:.05em;color:rgba(225,205,170,.95);text-align:center;line-height:1.2;text-transform:uppercase;}
-.rm-cover-tagline{font-family:'EB Garamond',serif;font-style:italic;font-size:6px;color:rgba(200,180,148,.45);text-align:right;}
-.rm-isbn{font-family:'Inter',sans-serif;font-size:9px;color:rgba(48,2,2,.4);letter-spacing:.04em;}
-.rm-book-r{padding:52px 52px;background:#EAE7E2;display:flex;flex-direction:column;gap:14px;}
-.rm-book-r h2{font-family:'EB Garamond',serif;font-size:22px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#300202;}
-.rm-book-r .author{font-family:'Inter',sans-serif;font-size:12px;color:rgba(48,2,2,.75);}
-.rm-book-r .pub{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:rgba(48,2,2,.5);}
-.rm-buy-btns{display:flex;gap:10px;margin-top:4px;}
-.rm-buy-btn{padding:6px 20px;border:1px solid rgba(48,2,2,.35);font-size:11px;font-family:'Inter',sans-serif;color:#300202;letter-spacing:.04em;cursor:pointer;}
-.rm-book-divider{width:100%;height:1px;background:rgba(48,2,2,.1);margin:6px 0;}
-.rm-book-desc{font-family:'EB Garamond',serif;font-size:13px;line-height:1.9;color:rgba(48,2,2,.72);}
-.rm-book-desc p+p{margin-top:10px;}
+/* ─── SCREENSHOT ─── */
+.screenshot-wrap{border-radius:20px;overflow:hidden;box-shadow:0 32px 80px rgba(48,2,2,.1);}
+.screenshot-wrap img{width:100%;display:block;}
+.site-link{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:100px;border:1px solid var(--rh-border);font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.06em;color:var(--rh-dark);text-decoration:none;transition:all .3s;flex-shrink:0;}
+.site-link:hover{background:var(--rh-dark);color:var(--rh-bg);border-color:var(--rh-dark);}
 
 /* ─── PROCESS ─── */
 .proc-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rh-border);border-radius:16px;overflow:hidden;}
@@ -135,13 +95,10 @@ body{font-family:'Inter',sans-serif;background:var(--rh-bg);color:var(--rh-dark)
   .rh-sec{padding:60px 32px;}
   .id-grid{grid-template-columns:repeat(2,1fr);}
   .type-grid{grid-template-columns:1fr;}
-  .rm-book-content{grid-template-columns:1fr;}
   .proc-strip{grid-template-columns:1fr;}
   .rh-cta{padding:80px 32px;}
   .rh-footer{padding:32px;flex-direction:column;gap:12px;text-align:center;}
   .back-btn{left:24px;}
-  .rm-nav{padding:16px 24px;}
-  .rm-hero{padding:40px 32px 60px;}
 }
 </style>
 </head>
@@ -237,111 +194,25 @@ body{font-family:'Inter',sans-serif;background:var(--rh-bg);color:var(--rh-dark)
   <p style="margin-top:44px;font-size:15px;color:var(--rh-muted);max-width:600px;line-height:1.85;">Typografien speiler bokas natur: Garamond gir historisk dybde og litterær autoritet, den kursive skriveformen understreker det poetiske og feminine, mens Courier Prime bringer en tekstuell råhet som minner om et manuskript.</p>
 </section>
 
-<!-- ─── 03: LANDINGSSIDE ─── -->
-<section class="rh-sec" style="background:var(--rh-dark);padding-bottom:120px;">
-  <div class="rh-sec-hdr" style="margin-bottom:48px;">
-    <span class="rh-sec-num" style="color:rgba(234,231,226,.3);">03</span>
-    <h3 class="rh-sec-title" style="color:var(--rh-bg);">Landingsside</h3>
-  </div>
-  <div class="mockup">
-    <div class="mock-bar" style="background:rgba(234,231,226,.05);border-bottom-color:rgba(234,231,226,.07);">
-      <div class="mock-dot" style="background:rgba(234,231,226,.18);"></div>
-      <div class="mock-dot" style="background:rgba(234,231,226,.18);"></div>
-      <div class="mock-dot" style="background:rgba(234,231,226,.18);"></div>
-      <div class="mock-url" style="background:rgba(234,231,226,.06);color:rgba(234,231,226,.3);">rihaforlag.no</div>
-    </div>
-    <div>
-      <div class="rm-nav">
-        <span class="rm-nav-link">Contact</span>
-        <div class="rm-nav-brand">
-          <h3>RIHA</h3>
-          <span>Litterære utgivelser for sjeledykkende historier</span>
-        </div>
-        <span class="rm-nav-link">Literature</span>
-      </div>
-      <div class="rm-hero">
-        <div class="rm-hero-content">
-          <p class="rm-tagline-reg">Når en kvinne er helt naken,</p>
-          <span class="rm-tagline-it">hvem er hun da?</span>
-          <div class="rm-divider-line"></div>
-          <p class="rm-body-text">Gjennom natur, kropp og urgamle ritualer, undersøker romanen moderne kvinnekraft i mange uttrykk</p>
-          <div class="rm-btn">Literære verk</div>
-        </div>
-      </div>
-      <div class="rm-foot">
-        <p>RIHA forlag eies av Alex Ark AS.</p>
-        <p><em>: RIHA forlag er etablert av Renate Alexandersen for litterære utgivelser med vekt på sjeledykkende historier.</em></p>
-        <p>Org.nr. 999 216 102</p>
-      </div>
-    </div>
-  </div>
-  <p style="margin-top:44px;font-size:15px;color:rgba(234,231,226,.45);max-width:600px;line-height:1.85;">Landingssiden lar boka snakke for seg selv. Det sage-grønne gradientbakgrunnet skaper en atmosfære av skog og natur — i tråd med bokas tematikk om det feminine og det skjulte.</p>
-</section>
-
-<!-- ─── 04: BOKSIDE ─── -->
+<!-- ─── 03: NETTSIDE ─── -->
 <section class="rh-sec" style="background:var(--rh-alt);">
   <div class="rh-sec-hdr">
-    <span class="rh-sec-num">04</span>
-    <h3 class="rh-sec-title">Bokside — Skogsglødet</h3>
+    <span class="rh-sec-num">03</span>
+    <h3 class="rh-sec-title">Nettside</h3>
   </div>
-  <div class="mockup">
-    <div class="mock-bar">
-      <div class="mock-dot"></div>
-      <div class="mock-dot"></div>
-      <div class="mock-dot"></div>
-      <div class="mock-url">rihaforlag.no/literature</div>
-    </div>
-    <div>
-      <div class="rm-nav">
-        <span class="rm-nav-link">Contact</span>
-        <div class="rm-nav-brand"><h3>RIHA</h3></div>
-        <span class="rm-nav-link">Literature</span>
-      </div>
-      <div class="rm-book-content">
-        <div class="rm-book-l">
-          <div class="rm-cover">
-            <div class="rm-cover-inner">
-              <div class="rm-cover-author">Renate Alexandersen</div>
-              <div class="rm-cover-middle">
-                <span class="rm-cover-sub-top">Hun som ser deg</span>
-                <span class="rm-cover-title">Skogsglødet</span>
-              </div>
-              <span class="rm-cover-tagline">I henne gløder det</span>
-            </div>
-          </div>
-          <span class="rm-isbn">ISBN: 978-82-694659-0-7</span>
-        </div>
-        <div class="rm-book-r">
-          <h2>Skogsglødet</h2>
-          <p class="author">Forfatter: Renate Alexandersen</p>
-          <p class="pub">Utgivelse: vår 2026</p>
-          <div class="rm-buy-btns">
-            <div class="rm-buy-btn">ARK</div>
-            <div class="rm-buy-btn">Norli AS</div>
-          </div>
-          <div class="rm-book-divider"></div>
-          <div class="rm-book-desc">
-            <p>Hun møter en gruppe kvinner i skogen.</p>
-            <p>De er ikke helt fremmede.</p>
-            <p>Noe i dem speiler hverandre – en gjenkjennelse som ikke kan forklares, men som merkes i kroppen, i blikkene, i stillheten mellom dem.</p>
-            <p>Rundt bålet, i naturens elementer og gjennom ritualene, skjer det en forskyvning. Sansene åpnes. Det som har ligget skjult, begynner å vise seg.</p>
-            <p>I skogen finnes det én regel:<br>Du blir sett.</p>
-            <p>Og det som blir sett, forandrer deg.</p>
-          </div>
-        </div>
-      </div>
-      <div class="rm-foot">
-        <p>RIHA forlag eies av Alex Ark AS. &nbsp;·&nbsp; Org.nr. 999 216 102</p>
-      </div>
-    </div>
+  <div class="screenshot-wrap">
+    <img src="../img/riha_bokomslag.png" alt="RIHA Forlag — Skogsglødet bokside">
   </div>
-  <p style="margin-top:44px;font-size:15px;color:var(--rh-muted);max-width:600px;line-height:1.85;">Boksiden presenterer verket med respekt for teksten — bokomslaget i fokus, kjøpelenker lett tilgjengelig, og beskrivelsen skrevet slik forfatteren selv har valgt å si det.</p>
+  <div style="margin-top:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+    <p style="font-size:15px;color:var(--rh-muted);max-width:560px;line-height:1.85;">Boksiden presenterer verket med respekt for teksten — bokomslaget i fokus, kjøpelenker lett tilgjengelig, og beskrivelsen skrevet slik forfatteren selv har valgt å si det.</p>
+    <a class="site-link" href="https://rihaforlag.no" target="_blank">Se nettside →</a>
+  </div>
 </section>
 
-<!-- ─── 05: PROSESS ─── -->
+<!-- ─── 04: PROSESS ─── -->
 <section class="rh-sec">
   <div class="rh-sec-hdr">
-    <span class="rh-sec-num">05</span>
+    <span class="rh-sec-num">04</span>
     <h3 class="rh-sec-title">Prosess</h3>
   </div>
   <div class="proc-strip">
