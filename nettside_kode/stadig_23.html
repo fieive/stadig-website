@@ -958,7 +958,7 @@ footer a:hover { color: var(--text); }
         <div class="proj-card-meta">
           <p class="proj-card-label">Nettside · Merkevare</p>
           <h3 class="proj-card-title">Iversen Bygg AS</h3>
-          <p class="proj-card-desc">Logo, visuell profil og nettside for et byggefirma i Lofoten.</p>
+          <p class="proj-card-desc">Logo, visuell profil og nettside for et byggefirma i Trondheim.</p>
         </div>
       </div>
     </div>
@@ -1051,14 +1051,15 @@ footer a:hover { color: var(--text); }
         </a>
       </div>
     </div>
-    <div class="contact-form">
+    <form class="contact-form" name="kontakt-hjem" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="kontakt-hjem">
       <div class="form-row">
-        <div class="form-field"><label>Navn</label><input type="text" placeholder="Ditt navn"></div>
-        <div class="form-field"><label>E-post</label><input type="email" placeholder="din@epost.no"></div>
+        <div class="form-field"><label>Navn</label><input type="text" name="navn" placeholder="Ditt navn" required></div>
+        <div class="form-field"><label>E-post</label><input type="email" name="epost" placeholder="din@epost.no" required></div>
       </div>
       <div class="form-field">
         <label>Hva trenger du hjelp med?</label>
-        <select>
+        <select name="tjeneste">
           <option value="" disabled selected>Velg tjeneste</option>
           <option>Logo & merkevare</option>
           <option>Nettside</option>
@@ -1069,10 +1070,10 @@ footer a:hover { color: var(--text); }
       </div>
       <div class="form-field">
         <label>Fortell litt om bedriften din</label>
-        <textarea rows="4" placeholder="Hva gjør du, og hvem er kundene dine?"></textarea>
+        <textarea name="melding" rows="4" placeholder="Hva gjør du, og hvem er kundene dine?"></textarea>
       </div>
-      <button class="btn btn-primary" style="width:100%;justify-content:center;">Send melding →</button>
-    </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send melding →</button>
+    </form>
   </section>
   <footer>
     <a href="mailto:sofieemiv@gmail.com">sofieemiv@gmail.com</a>
@@ -1102,7 +1103,7 @@ footer a:hover { color: var(--text); }
       </div>
       <div class="project-tags"><span class="project-tag">Nettside</span><span class="project-tag">Merkevare</span><span class="project-tag">Ikonografi</span></div>
       <div class="project-name">Iversen Bygg AS</div>
-      <div class="project-desc">Logo, visuell profil og nettside for et lokalt byggefirma i Lofoten. Robust og tillitsvekkende identitet.</div>
+      <div class="project-desc">Logo, visuell profil og nettside for et lokalt byggefirma i Trondheim. Robust og tillitsvekkende identitet.</div>
     </div>
     <div class="project-card fade-in" onclick="openRihaForlag()">
       <div class="project-img" style="background:linear-gradient(155deg,#B0D7C2 0%,#C2CBB7 60%,#B8C4AB 100%);display:flex;align-items:flex-end;justify-content:flex-start;padding:24px;">
@@ -1165,14 +1166,15 @@ footer a:hover { color: var(--text); }
       <h2>Har du et prosjekt i tankene?</h2>
       <p class="contact-intro">Ta kontakt, så finner vi ut om vi passer for hverandre.</p>
     </div>
-    <div class="contact-form">
+    <form class="contact-form" name="kontakt-prosjekter" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="kontakt-prosjekter">
       <div class="form-row">
-        <div class="form-field"><label>Navn</label><input type="text"></div>
-        <div class="form-field"><label>E-post</label><input type="email"></div>
+        <div class="form-field"><label>Navn</label><input type="text" name="navn" required></div>
+        <div class="form-field"><label>E-post</label><input type="email" name="epost" required></div>
       </div>
-      <div class="form-field"><label>Melding</label><textarea rows="4"></textarea></div>
-      <button class="btn btn-primary" style="width:100%;justify-content:center;">Send →</button>
-    </div>
+      <div class="form-field"><label>Melding</label><textarea name="melding" rows="4"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send →</button>
+    </form>
   </section>
   <footer>
     <a href="mailto:sofieemiv@gmail.com">sofieemiv@gmail.com</a>
@@ -1255,14 +1257,15 @@ footer a:hover { color: var(--text); }
       <h2>La oss jobbe sammen</h2>
       <p class="contact-intro">Klar til å ta neste steg? Send meg en melding, og vi finner ut av resten.</p>
     </div>
-    <div class="contact-form">
+    <form class="contact-form" name="kontakt-om" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="kontakt-om">
       <div class="form-row">
-        <div class="form-field"><label>Navn</label><input type="text"></div>
-        <div class="form-field"><label>E-post</label><input type="email"></div>
+        <div class="form-field"><label>Navn</label><input type="text" name="navn" required></div>
+        <div class="form-field"><label>E-post</label><input type="email" name="epost" required></div>
       </div>
-      <div class="form-field"><label>Melding</label><textarea rows="4"></textarea></div>
-      <button class="btn btn-primary" style="width:100%;justify-content:center;">Send →</button>
-    </div>
+      <div class="form-field"><label>Melding</label><textarea name="melding" rows="4"></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send →</button>
+    </form>
   </section>
   <footer>
     <a href="mailto:sofieemiv@gmail.com">sofieemiv@gmail.com</a>
