@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIHA Forlag — Stadig Design</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rh-bg:#EAE7E2;
+  --rh-alt:#D9D5CF;
+  --rh-sage:#B0D7C2;
+  --rh-olive:#C2CBB7;
+  --rh-dark:#300202;
+  --rh-muted:rgba(48,2,2,.5);
+  --rh-border:rgba(48,2,2,.1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;background:var(--rh-bg);color:var(--rh-dark);font-weight:300;overflow-x:hidden;}
+
+.back-btn{position:fixed;top:28px;left:48px;z-index:100;display:flex;align-items:center;gap:8px;font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--rh-muted);background:rgba(234,231,226,.85);backdrop-filter:blur(12px);border:1px solid var(--rh-border);border-radius:50px;padding:8px 18px;cursor:pointer;transition:color .3s;}
+.back-btn::before{content:'←';font-size:14px;}
+.back-btn:hover{color:var(--rh-dark);}
+
+/* ─── HERO ─── */
+.rh-hero{min-height:100vh;background:var(--rh-dark);display:flex;flex-direction:column;justify-content:flex-end;padding:0 80px 100px;position:relative;overflow:hidden;}
+.rh-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 65% 25%, rgba(176,215,194,.07) 0%, transparent 60%);pointer-events:none;}
+.rh-hero::after{content:'';position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(176,215,194,.018) 59px,rgba(176,215,194,.018) 60px);pointer-events:none;}
+.rh-label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--rh-sage);margin-bottom:20px;font-weight:500;font-family:'Inter',sans-serif;}
+.rh-hero h1{font-family:'EB Garamond',serif;font-weight:400;font-style:italic;font-size:clamp(52px,7vw,100px);line-height:1.0;color:var(--rh-bg);margin-bottom:44px;max-width:760px;}
+.rh-meta{display:flex;align-items:center;gap:48px;}
+.rh-meta-item{display:flex;flex-direction:column;gap:4px;}
+.rh-meta-item span:first-child{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(234,231,226,.35);font-family:'Inter',sans-serif;}
+.rh-meta-item span:last-child{font-size:14px;color:rgba(234,231,226,.8);font-family:'Inter',sans-serif;}
+.rh-divider{width:1px;height:40px;background:rgba(234,231,226,.15);}
+
+/* ─── INTRO ─── */
+.rh-intro{padding:120px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.rh-intro-label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--rh-dark);margin-bottom:24px;font-weight:500;opacity:.45;}
+.rh-intro h2{font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(26px,3vw,40px);line-height:1.3;color:var(--rh-dark);}
+.rh-intro p{font-size:17px;line-height:1.85;color:var(--rh-muted);max-width:520px;}
+.rh-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;}
+.rh-tag{padding:8px 18px;border-radius:100px;border:1px solid var(--rh-border);font-size:12px;letter-spacing:.06em;color:var(--rh-muted);}
+
+/* ─── SECTIONS ─── */
+.rh-sec{padding:100px 80px;}
+.rh-sec-hdr{display:flex;align-items:baseline;gap:20px;margin-bottom:64px;}
+.rh-sec-num{font-size:12px;letter-spacing:.1em;color:var(--rh-dark);font-weight:500;opacity:.4;font-family:'Inter',sans-serif;}
+.rh-sec-title{font-family:'EB Garamond',serif;font-weight:400;font-size:clamp(22px,2.5vw,34px);color:var(--rh-dark);}
+
+/* ─── IDENTITY GRID ─── */
+.id-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.id-cell{aspect-ratio:1;border-radius:16px;border:1px solid var(--rh-border);transition:transform .4s,box-shadow .4s;display:flex;align-items:center;justify-content:center;padding:24px;overflow:hidden;}
+.id-cell:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(48,2,2,.08);}
+
+/* ─── TYPOGRAPHY ─── */
+.type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rh-border);border-radius:16px;overflow:hidden;}
+.type-cell{background:var(--rh-bg);padding:44px 40px;}
+.type-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--rh-muted);margin-bottom:20px;font-family:'Inter',sans-serif;}
+.type-sample-serif{font-family:'EB Garamond',serif;font-size:clamp(30px,3.5vw,50px);font-weight:400;color:var(--rh-dark);line-height:1.1;}
+.type-sample-italic{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,52px);font-weight:400;font-style:italic;color:var(--rh-dark);line-height:1.1;}
+.type-sample-mono{font-family:'Courier Prime',monospace;font-size:clamp(13px,1.4vw,17px);color:var(--rh-dark);line-height:1.8;opacity:.7;}
+.type-name{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rh-muted);margin-top:24px;font-family:'Inter',sans-serif;}
+
+/* ─── MOCKUP SHELL ─── */
+.mockup{border-radius:20px;overflow:hidden;border:1px solid rgba(48,2,2,.12);box-shadow:0 32px 80px rgba(48,2,2,.1);}
+.mock-bar{background:rgba(48,2,2,.04);padding:12px 20px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(48,2,2,.07);}
+.mock-dot{width:10px;height:10px;border-radius:50%;background:rgba(48,2,2,.12);}
+.mock-url{margin-left:12px;background:rgba(48,2,2,.06);border-radius:6px;padding:4px 16px;font-size:11px;color:rgba(48,2,2,.4);letter-spacing:.04em;flex:1;max-width:280px;font-family:'Inter',sans-serif;}
+
+/* ─── RIHA SITE — LANDING ─── */
+.rm-nav{padding:20px 40px;display:flex;justify-content:space-between;align-items:flex-start;background:#EAE7E2;border-bottom:1px solid rgba(48,2,2,.08);}
+.rm-nav-link{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.08em;color:rgba(48,2,2,.6);}
+.rm-nav-brand{text-align:center;display:flex;flex-direction:column;gap:5px;}
+.rm-nav-brand h3{font-family:'EB Garamond',serif;font-size:20px;font-weight:400;letter-spacing:.1em;color:#300202;}
+.rm-nav-brand span{font-family:'EB Garamond',serif;font-style:italic;font-size:11px;color:rgba(48,2,2,.5);letter-spacing:.02em;}
+.rm-hero{background:linear-gradient(155deg,#B0D7C2 0%,#BFD0B5 50%,#C2CBB7 80%,#B8C4AB 100%);padding:60px 60px 90px;min-height:420px;display:flex;align-items:flex-end;}
+.rm-hero-content{max-width:420px;}
+.rm-tagline-reg{font-family:'EB Garamond',serif;font-weight:400;font-size:22px;color:#300202;line-height:1.3;}
+.rm-tagline-it{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:44px;color:#300202;line-height:1.0;display:block;margin-top:4px;}
+.rm-divider-line{width:100%;max-width:360px;height:1px;background:rgba(48,2,2,.2);margin:22px 0;}
+.rm-body-text{font-family:'Inter',sans-serif;font-size:12px;line-height:1.75;color:rgba(48,2,2,.7);max-width:285px;font-weight:300;}
+.rm-btn{display:inline-block;border:1px solid rgba(48,2,2,.4);padding:9px 22px;font-size:11px;font-family:'Inter',sans-serif;letter-spacing:.06em;color:#300202;margin-top:22px;cursor:pointer;}
+.rm-foot{padding:20px 40px;background:#EAE7E2;border-top:1px solid rgba(48,2,2,.08);text-align:center;}
+.rm-foot p{font-family:'Inter',sans-serif;font-size:10px;color:rgba(48,2,2,.4);line-height:1.9;letter-spacing:.03em;}
+.rm-foot em{font-family:'EB Garamond',serif;font-size:11px;}
+
+/* ─── RIHA SITE — BOOK PAGE ─── */
+.rm-book-content{display:grid;grid-template-columns:1fr 1fr;min-height:500px;}
+.rm-book-l{padding:56px 48px;background:linear-gradient(155deg,#B0D7C2 0%,#BFD0B5 50%,#C2CBB7 80%,#B8C4AB 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:16px;}
+.rm-cover{width:160px;height:224px;border-radius:3px;box-shadow:6px 10px 32px rgba(0,0,0,.35);overflow:hidden;flex-shrink:0;}
+.rm-cover-inner{width:100%;height:100%;background:linear-gradient(160deg,#1c2f18 0%,#2d4b1e 28%,#3a5525 48%,#1a2415 68%,#0f1a0b 100%);display:flex;flex-direction:column;justify-content:space-between;padding:14px 12px 12px;position:relative;overflow:hidden;}
+.rm-cover-inner::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(180,138,58,.3) 0%,transparent 65%);pointer-events:none;}
+.rm-cover-inner::after{content:'';position:absolute;top:15%;left:-25%;width:150%;height:55%;background:radial-gradient(ellipse,rgba(200,158,65,.2) 0%,transparent 60%);transform:rotate(-12deg);pointer-events:none;}
+.rm-cover-author{font-family:'Inter',sans-serif;font-size:6.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(220,200,175,.65);font-weight:500;}
+.rm-cover-middle{display:flex;flex-direction:column;align-items:center;gap:8px;position:relative;z-index:1;}
+.rm-cover-sub-top{font-family:'EB Garamond',serif;font-style:italic;font-size:7px;color:rgba(220,200,168,.55);letter-spacing:.05em;}
+.rm-cover-title{font-family:'EB Garamond',serif;font-size:16px;font-weight:500;letter-spacing:.05em;color:rgba(225,205,170,.95);text-align:center;line-height:1.2;text-transform:uppercase;}
+.rm-cover-tagline{font-family:'EB Garamond',serif;font-style:italic;font-size:6px;color:rgba(200,180,148,.45);text-align:right;}
+.rm-isbn{font-family:'Inter',sans-serif;font-size:9px;color:rgba(48,2,2,.4);letter-spacing:.04em;}
+.rm-book-r{padding:52px 52px;background:#EAE7E2;display:flex;flex-direction:column;gap:14px;}
+.rm-book-r h2{font-family:'EB Garamond',serif;font-size:22px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:#300202;}
+.rm-book-r .author{font-family:'Inter',sans-serif;font-size:12px;color:rgba(48,2,2,.75);}
+.rm-book-r .pub{font-family:'EB Garamond',serif;font-style:italic;font-size:13px;color:rgba(48,2,2,.5);}
+.rm-buy-btns{display:flex;gap:10px;margin-top:4px;}
+.rm-buy-btn{padding:6px 20px;border:1px solid rgba(48,2,2,.35);font-size:11px;font-family:'Inter',sans-serif;color:#300202;letter-spacing:.04em;cursor:pointer;}
+.rm-book-divider{width:100%;height:1px;background:rgba(48,2,2,.1);margin:6px 0;}
+.rm-book-desc{font-family:'EB Garamond',serif;font-size:13px;line-height:1.9;color:rgba(48,2,2,.72);}
+.rm-book-desc p+p{margin-top:10px;}
+
+/* ─── PROCESS ─── */
+.proc-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--rh-border);border-radius:16px;overflow:hidden;}
+.proc-cell{padding:36px 32px;background:var(--rh-bg);}
+.proc-num{display:block;font-size:11px;letter-spacing:.12em;color:var(--rh-dark);opacity:.4;font-weight:500;margin-bottom:16px;text-transform:uppercase;font-family:'Inter',sans-serif;}
+.proc-cell h4{font-family:'EB Garamond',serif;font-size:19px;font-weight:400;margin-bottom:10px;}
+.proc-cell p{font-size:14px;color:var(--rh-muted);line-height:1.8;}
+
+/* ─── CTA ─── */
+.rh-cta{padding:120px 80px;background:var(--rh-dark);text-align:center;}
+.rh-cta h2{font-family:'EB Garamond',serif;font-weight:400;font-style:italic;font-size:clamp(28px,3.5vw,52px);color:var(--rh-bg);margin-bottom:16px;}
+.rh-cta p{font-size:16px;color:rgba(234,231,226,.45);margin-bottom:40px;}
+.btn-rh{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;border-radius:100px;border:1px solid var(--rh-sage);background:transparent;color:var(--rh-sage);font-family:'Inter',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:all .3s;}
+.btn-rh:hover{background:var(--rh-sage);color:var(--rh-dark);}
+
+/* ─── FOOTER ─── */
+.rh-footer{padding:40px 80px;border-top:1px solid var(--rh-border);display:flex;justify-content:space-between;align-items:center;}
+.rh-footer span{font-size:12px;color:var(--rh-muted);letter-spacing:.06em;}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .rh-hero{padding:0 32px 80px;}
+  .rh-meta{flex-wrap:wrap;gap:24px;}
+  .rh-intro{grid-template-columns:1fr;padding:80px 32px;gap:40px;}
+  .rh-sec{padding:60px 32px;}
+  .id-grid{grid-template-columns:repeat(2,1fr);}
+  .type-grid{grid-template-columns:1fr;}
+  .rm-book-content{grid-template-columns:1fr;}
+  .proc-strip{grid-template-columns:1fr;}
+  .rh-cta{padding:80px 32px;}
+  .rh-footer{padding:32px;flex-direction:column;gap:12px;text-align:center;}
+  .back-btn{left:24px;}
+  .rm-nav{padding:16px 24px;}
+  .rm-hero{padding:40px 32px 60px;}
+}
+</style>
+</head>
+<body>
+
+<button class="back-btn" onclick="window.opener ? window.close() : history.back()">Tilbake</button>
+
+<!-- ─── HERO ─── -->
+<section class="rh-hero">
+  <div>
+    <p class="rh-label">Prosjekt — 03</p>
+    <h1>RIHA Forlag</h1>
+    <div class="rh-meta">
+      <div class="rh-meta-item"><span>Kategori</span><span>Nettside & Litterær Design</span></div>
+      <div class="rh-divider"></div>
+      <div class="rh-meta-item"><span>Verktøy</span><span>Figma · Webflow</span></div>
+      <div class="rh-divider"></div>
+      <div class="rh-meta-item"><span>Rolle</span><span>UX/UI Designer</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTRO ─── -->
+<section class="rh-intro">
+  <div>
+    <p class="rh-intro-label">Om prosjektet</p>
+    <h2>Enkelhet og litterær estetikk — for å fremheve forfatterens stemme.</h2>
+  </div>
+  <div>
+    <p>RIHA Forlag er et uavhengig norsk forlag etablert av Renate Alexandersen for litterære utgivelser med vekt på sjeledykkende historier. Prosjektet omfattet utvikling av landingsside med fokus på å fremheve bokas stemme og gjøre den tilgjengelig for leserne — uten støy, uten distraksjoner.</p>
+    <div class="rh-tags">
+      <span class="rh-tag">Nettside</span>
+      <span class="rh-tag">Litterær design</span>
+      <span class="rh-tag">Typografi</span>
+      <span class="rh-tag">Uavhengig forlag</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 01: VISUELL IDENTITET ─── -->
+<section class="rh-sec" style="background:linear-gradient(180deg,#D0D9CC 0%,var(--rh-alt) 100%);">
+  <div class="rh-sec-hdr">
+    <span class="rh-sec-num">01</span>
+    <h3 class="rh-sec-title">Visuell Identitet</h3>
+  </div>
+  <div class="id-grid">
+    <div class="id-cell" style="background:#B0D7C2;flex-direction:column;align-items:flex-start;padding:28px;gap:10px;border-color:rgba(48,2,2,.07);">
+      <div style="width:100%;flex:1;border-radius:10px;background:#B0D7C2;border:1px solid rgba(48,2,2,.1);min-height:60px;"></div>
+      <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(48,2,2,.5);font-family:'Inter',sans-serif;">#B0D7C2 — Sage</span>
+    </div>
+    <div class="id-cell" style="background:#C2CBB7;flex-direction:column;align-items:flex-start;padding:28px;gap:10px;border-color:rgba(48,2,2,.07);">
+      <div style="width:100%;flex:1;border-radius:10px;background:#C2CBB7;border:1px solid rgba(48,2,2,.1);min-height:60px;"></div>
+      <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(48,2,2,.5);font-family:'Inter',sans-serif;">#C2CBB7 — Olive</span>
+    </div>
+    <div class="id-cell" style="background:#EAE7E2;flex-direction:column;align-items:flex-start;padding:28px;gap:10px;">
+      <div style="width:100%;flex:1;border-radius:10px;background:#EAE7E2;border:1px solid rgba(48,2,2,.14);min-height:60px;"></div>
+      <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(48,2,2,.45);font-family:'Inter',sans-serif;">#EAE7E2 — Lin</span>
+    </div>
+    <div class="id-cell" style="background:#300202;flex-direction:column;align-items:flex-start;padding:28px;gap:10px;border-color:transparent;">
+      <div style="width:100%;flex:1;border-radius:10px;background:#300202;border:1px solid rgba(234,231,226,.1);min-height:60px;"></div>
+      <span style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(234,231,226,.4);font-family:'Inter',sans-serif;">#300202 — Burgunder</span>
+    </div>
+  </div>
+  <div style="margin-top:44px;">
+    <p style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--rh-dark);opacity:.4;margin-bottom:12px;font-family:'Inter',sans-serif;">Konsept</p>
+    <p style="font-size:15px;color:var(--rh-muted);max-width:560px;line-height:1.85;">Fargepaletten er hentet fra naturens eget fargekart — mosegrønn, olivengrå og linhvit gir siden en organisk ro. Den dype burgunderfargen forankrer identiteten med tyngde og intimitet — i tråd med bokas tema om det feminine og det skjulte.</p>
+  </div>
+</section>
+
+<!-- ─── 02: TYPOGRAFI ─── -->
+<section class="rh-sec">
+  <div class="rh-sec-hdr">
+    <span class="rh-sec-num">02</span>
+    <h3 class="rh-sec-title">Typografi</h3>
+  </div>
+  <div class="type-grid">
+    <div class="type-cell">
+      <p class="type-label">The Season / Garamond — Display</p>
+      <p class="type-sample-serif">RIHA<br>Forlag</p>
+      <p class="type-name">EB Garamond — Overskrifter</p>
+    </div>
+    <div class="type-cell" style="background:#F2F0EC;">
+      <p class="type-label">Kursiv Display — The Season</p>
+      <p class="type-sample-italic">hvem er<br>hun da?</p>
+      <p class="type-name">Cormorant Italic — Sitater & stemning</p>
+    </div>
+    <div class="type-cell">
+      <p class="type-label">Courier Prime — Brødtekst</p>
+      <p class="type-sample-mono">Hun møter en gruppe<br>kvinner i skogen.<br><br>De er ikke helt<br>fremmede.</p>
+      <p class="type-name">Courier Prime — Boktekst</p>
+    </div>
+  </div>
+  <p style="margin-top:44px;font-size:15px;color:var(--rh-muted);max-width:600px;line-height:1.85;">Typografien speiler bokas natur: Garamond gir historisk dybde og litterær autoritet, den kursive skriveformen understreker det poetiske og feminine, mens Courier Prime bringer en tekstuell råhet som minner om et manuskript.</p>
+</section>
+
+<!-- ─── 03: LANDINGSSIDE ─── -->
+<section class="rh-sec" style="background:var(--rh-dark);padding-bottom:120px;">
+  <div class="rh-sec-hdr" style="margin-bottom:48px;">
+    <span class="rh-sec-num" style="color:rgba(234,231,226,.3);">03</span>
+    <h3 class="rh-sec-title" style="color:var(--rh-bg);">Landingsside</h3>
+  </div>
+  <div class="mockup">
+    <div class="mock-bar" style="background:rgba(234,231,226,.05);border-bottom-color:rgba(234,231,226,.07);">
+      <div class="mock-dot" style="background:rgba(234,231,226,.18);"></div>
+      <div class="mock-dot" style="background:rgba(234,231,226,.18);"></div>
+      <div class="mock-dot" style="background:rgba(234,231,226,.18);"></div>
+      <div class="mock-url" style="background:rgba(234,231,226,.06);color:rgba(234,231,226,.3);">rihaforlag.no</div>
+    </div>
+    <div>
+      <div class="rm-nav">
+        <span class="rm-nav-link">Contact</span>
+        <div class="rm-nav-brand">
+          <h3>RIHA</h3>
+          <span>Litterære utgivelser for sjeledykkende historier</span>
+        </div>
+        <span class="rm-nav-link">Literature</span>
+      </div>
+      <div class="rm-hero">
+        <div class="rm-hero-content">
+          <p class="rm-tagline-reg">Når en kvinne er helt naken,</p>
+          <span class="rm-tagline-it">hvem er hun da?</span>
+          <div class="rm-divider-line"></div>
+          <p class="rm-body-text">Gjennom natur, kropp og urgamle ritualer, undersøker romanen moderne kvinnekraft i mange uttrykk</p>
+          <div class="rm-btn">Literære verk</div>
+        </div>
+      </div>
+      <div class="rm-foot">
+        <p>RIHA forlag eies av Alex Ark AS.</p>
+        <p><em>: RIHA forlag er etablert av Renate Alexandersen for litterære utgivelser med vekt på sjeledykkende historier.</em></p>
+        <p>Org.nr. 999 216 102</p>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:44px;font-size:15px;color:rgba(234,231,226,.45);max-width:600px;line-height:1.85;">Landingssiden lar boka snakke for seg selv. Det sage-grønne gradientbakgrunnet skaper en atmosfære av skog og natur — i tråd med bokas tematikk om det feminine og det skjulte.</p>
+</section>
+
+<!-- ─── 04: BOKSIDE ─── -->
+<section class="rh-sec" style="background:var(--rh-alt);">
+  <div class="rh-sec-hdr">
+    <span class="rh-sec-num">04</span>
+    <h3 class="rh-sec-title">Bokside — Skogsglødet</h3>
+  </div>
+  <div class="mockup">
+    <div class="mock-bar">
+      <div class="mock-dot"></div>
+      <div class="mock-dot"></div>
+      <div class="mock-dot"></div>
+      <div class="mock-url">rihaforlag.no/literature</div>
+    </div>
+    <div>
+      <div class="rm-nav">
+        <span class="rm-nav-link">Contact</span>
+        <div class="rm-nav-brand"><h3>RIHA</h3></div>
+        <span class="rm-nav-link">Literature</span>
+      </div>
+      <div class="rm-book-content">
+        <div class="rm-book-l">
+          <div class="rm-cover">
+            <div class="rm-cover-inner">
+              <div class="rm-cover-author">Renate Alexandersen</div>
+              <div class="rm-cover-middle">
+                <span class="rm-cover-sub-top">Hun som ser deg</span>
+                <span class="rm-cover-title">Skogsglødet</span>
+              </div>
+              <span class="rm-cover-tagline">I henne gløder det</span>
+            </div>
+          </div>
+          <span class="rm-isbn">ISBN: 978-82-694659-0-7</span>
+        </div>
+        <div class="rm-book-r">
+          <h2>Skogsglødet</h2>
+          <p class="author">Forfatter: Renate Alexandersen</p>
+          <p class="pub">Utgivelse: vår 2026</p>
+          <div class="rm-buy-btns">
+            <div class="rm-buy-btn">ARK</div>
+            <div class="rm-buy-btn">Norli AS</div>
+          </div>
+          <div class="rm-book-divider"></div>
+          <div class="rm-book-desc">
+            <p>Hun møter en gruppe kvinner i skogen.</p>
+            <p>De er ikke helt fremmede.</p>
+            <p>Noe i dem speiler hverandre – en gjenkjennelse som ikke kan forklares, men som merkes i kroppen, i blikkene, i stillheten mellom dem.</p>
+            <p>Rundt bålet, i naturens elementer og gjennom ritualene, skjer det en forskyvning. Sansene åpnes. Det som har ligget skjult, begynner å vise seg.</p>
+            <p>I skogen finnes det én regel:<br>Du blir sett.</p>
+            <p>Og det som blir sett, forandrer deg.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rm-foot">
+        <p>RIHA forlag eies av Alex Ark AS. &nbsp;·&nbsp; Org.nr. 999 216 102</p>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:44px;font-size:15px;color:var(--rh-muted);max-width:600px;line-height:1.85;">Boksiden presenterer verket med respekt for teksten — bokomslaget i fokus, kjøpelenker lett tilgjengelig, og beskrivelsen skrevet slik forfatteren selv har valgt å si det.</p>
+</section>
+
+<!-- ─── 05: PROSESS ─── -->
+<section class="rh-sec">
+  <div class="rh-sec-hdr">
+    <span class="rh-sec-num">05</span>
+    <h3 class="rh-sec-title">Prosess</h3>
+  </div>
+  <div class="proc-strip">
+    <div class="proc-cell">
+      <span class="proc-num">01</span>
+      <h4>Brief & stemme</h4>
+      <p>Kartlegging av forlagets identitet, bokas tematikk og hvilke lesere vi ønsker å nå.</p>
+    </div>
+    <div class="proc-cell">
+      <span class="proc-num">02</span>
+      <h4>Atmosfære & estetikk</h4>
+      <p>Utvikling av fargeprofil, typografi og visuell stemning som speiler bokas natur og forlagets egenart.</p>
+    </div>
+    <div class="proc-cell">
+      <span class="proc-num">03</span>
+      <h4>Nettside</h4>
+      <p>Design og utvikling av landingsside og bokside med fokus på enkelhet og litterær estetikk.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="rh-cta">
+  <h2>Nysgjerrig på prosessen?</h2>
+  <p>Ta gjerne kontakt for en uforpliktende prat.</p>
+  <a class="btn-rh" href="mailto:sofieemiv@gmail.com">Ta kontakt</a>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="rh-footer">
+  <span>Stadig Design Studio</span>
+  <span>sofieemiv@gmail.com &nbsp;·&nbsp; @stadigdesign</span>
+</footer>
+
+</body>
+</html>

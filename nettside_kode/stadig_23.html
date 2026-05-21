@@ -552,11 +552,13 @@ footer a:hover{color:var(--text);}
       <div class="project-name">Iversen Bygg AS</div>
       <div class="project-desc">Logo, visuell profil og nettside for et lokalt byggefirma i Lofoten. Robust og tillitsvekkende identitet.</div>
     </div>
-    <div class="project-card fade-in" style="opacity:0.4;cursor:default;">
-      <div class="project-img"><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Kommer snart</span></div>
-      <div class="project-tags"><span class="project-tag">Branding</span></div>
-      <div class="project-name">Nytt prosjekt</div>
-      <div class="project-desc">Mer arbeid kommer.</div>
+    <div class="project-card fade-in" onclick="openRihaForlag()">
+      <div class="project-img" style="background:linear-gradient(155deg,#B0D7C2 0%,#C2CBB7 60%,#B8C4AB 100%);display:flex;align-items:flex-end;justify-content:flex-start;padding:24px;">
+        <span style="font-family:'EB Garamond',serif;font-size:22px;font-weight:400;letter-spacing:.1em;color:#300202;">RIHA</span>
+      </div>
+      <div class="project-tags"><span class="project-tag">Nettside</span><span class="project-tag">Litterær design</span><span class="project-tag">Typografi</span></div>
+      <div class="project-name">RIHA Forlag</div>
+      <div class="project-desc">Landingsside for et uavhengig norsk forlag. Litterær estetikk og naturlig ro for å fremheve forfatterens stemme.</div>
     </div>
     <div class="project-card fade-in" style="opacity:0.4;cursor:default;">
       <div class="project-img"><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Kommer snart</span></div>
@@ -720,6 +722,7 @@ footer a:hover{color:var(--text);}
 <script>
 function openNordquest() { window.open('nordquest.html', '_blank'); }
 function openIversenBygg() { window.open('iversen_bygg.html', '_blank'); }
+function openRihaForlag() { window.open('riha_forlag.html', '_blank'); }
 
 function showPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
