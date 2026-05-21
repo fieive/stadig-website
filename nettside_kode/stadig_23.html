@@ -37,7 +37,7 @@
   --bg-card: #edeae5;
   --text: #2a1a12;
   --text-muted: #8a7060;
-  --accent: #c05a38;
+  --accent: #6b1535;
   --border: rgba(42,26,18,0.1);
   --ease: cubic-bezier(0.25,0.46,0.45,0.94);
   --ease-spring: cubic-bezier(0.16,1,0.3,1);
@@ -116,8 +116,8 @@ nav {
   border-radius: 50px;
   display: block;
 }
-.nav-links a:hover { color: #410709; background: rgba(65,7,9,0.08); }
-.nav-links a.active { color: #410709; background: rgba(65,7,9,0.08); }
+.nav-links a:hover { color: var(--accent); background: rgba(107,21,53,0.08); }
+.nav-links a.active { color: var(--accent); background: rgba(107,21,53,0.08); }
 
 /* ANIMATIONS */
 @keyframes fadeUp {
@@ -157,10 +157,10 @@ nav {
   border: none;
   font-family: 'Inter', sans-serif;
 }
-.btn-primary { background: var(--text); color: var(--bg); }
-.btn-primary:hover { background: #3d2418; transform: translateY(-2px); }
-.btn-outline { background: transparent; border: 1px solid rgba(42,26,18,0.25); color: var(--text); }
-.btn-outline:hover { border-color: rgba(42,26,18,0.55); background: rgba(42,26,18,0.04); transform: translateY(-2px); }
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #580f2c; transform: translateY(-2px); }
+.btn-outline { background: transparent; border: 1.5px solid rgba(107,21,53,0.45); color: var(--accent); }
+.btn-outline:hover { border-color: var(--accent); background: rgba(107,21,53,0.06); transform: translateY(-2px); }
 
 .section-label {
   font-size: 11px;
@@ -192,16 +192,16 @@ nav {
 
 /* HERO */
 .hero {
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 1fr auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   padding: 0 56px;
   overflow: hidden;
 }
 .hero-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   padding-bottom: 96px;
   max-width: 960px;
   animation: fadeUp 1.1s var(--ease-spring) both;
@@ -233,10 +233,10 @@ nav {
   font-family: 'Manrope', sans-serif;
   font-weight: 200;
   font-size: clamp(46px, 7.5vw, 92px);
-  line-height: 1.04;
+  line-height: 1.1;
   color: var(--text);
   margin-bottom: 28px;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
 }
 .hero h1 em {
   font-style: italic;
@@ -246,8 +246,8 @@ nav {
 .hero-sub {
   font-size: 18px;
   color: var(--text-muted);
-  line-height: 1.82;
-  margin-bottom: 44px;
+  line-height: 1.95;
+  margin-bottom: 48px;
   max-width: 520px;
   font-weight: 300;
 }
@@ -256,9 +256,8 @@ nav {
   display: flex;
   align-items: center;
   gap: 40px;
-  padding: 36px 0 44px;
+  padding: 36px 56px 44px;
   border-top: 1px solid var(--border);
-  margin-top: auto;
   animation: fadeIn 1.1s ease both;
   animation-delay: 0.55s;
 }
@@ -815,7 +814,7 @@ footer a:hover { color: var(--text); }
   .hero { padding: 0 24px; }
   .hero-content { padding-bottom: 64px; }
   .hero h1 { font-size: clamp(38px, 10vw, 58px); }
-  .hero-scroll { gap: 24px; flex-wrap: wrap; }
+  .hero-scroll { gap: 24px; flex-wrap: wrap; padding: 28px 24px 36px; }
   .services { padding: 72px 24px; }
   .services-grid { grid-template-columns: 1fr 1fr; }
   .services-hdr { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -874,23 +873,23 @@ footer a:hover { color: var(--text); }
         <a class="btn btn-outline" onclick="showPage('galleri')">Se prosjekter</a>
       </div>
     </div>
-    <div class="hero-scroll">
-      <div class="hero-scroll-item">
-        <span class="num">10+</span>
-        <span class="lbl">Prosjekter levert</span>
-      </div>
-      <div class="hero-scroll-divider"></div>
-      <div class="hero-scroll-item">
-        <span class="num">100%</span>
-        <span class="lbl">Fornøyde kunder</span>
-      </div>
-      <div class="hero-scroll-divider"></div>
-      <div class="hero-scroll-item">
-        <span class="num">Norsk</span>
-        <span class="lbl">Design studio</span>
-      </div>
-    </div>
   </section>
+  <div class="hero-scroll">
+    <div class="hero-scroll-item">
+      <span class="num">10+</span>
+      <span class="lbl">Prosjekter levert</span>
+    </div>
+    <div class="hero-scroll-divider"></div>
+    <div class="hero-scroll-item">
+      <span class="num">100%</span>
+      <span class="lbl">Fornøyde kunder</span>
+    </div>
+    <div class="hero-scroll-divider"></div>
+    <div class="hero-scroll-item">
+      <span class="num">Norsk</span>
+      <span class="lbl">Design studio</span>
+    </div>
+  </div>
 
   <section class="services fade-in">
     <div class="services-hdr">
