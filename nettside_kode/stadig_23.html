@@ -1319,6 +1319,35 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 triggerFadeIns();
+
+document.querySelectorAll('form[data-netlify]').forEach(form => {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.textContent = 'Sender...';
+    btn.disabled = true;
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(new FormData(form)).toString()
+      });
+      if (res.ok) {
+        btn.textContent = 'Sendt! Vi tar kontakt snart.';
+        btn.style.background = '#2a6040';
+        form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
+        setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 5000);
+      } else {
+        throw new Error();
+      }
+    } catch {
+      btn.textContent = 'Noe gikk galt. Prøv igjen.';
+      btn.style.background = '#8b2020';
+      setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
+    }
+  });
+});
 </script>
 
 <script type="application/ld+json">
