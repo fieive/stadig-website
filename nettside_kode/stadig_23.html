@@ -18,17 +18,19 @@
 <meta property="og:site_name" content="Stadig Design Studio">
 <meta property="og:title" content="Sofie Iversen | Webdesigner Norge — Skandinavisk Design med Mening">
 <meta property="og:description" content="Frilans webdesigner basert i Norge. Jeg hjelper bedrifter og enkeltpersoner med nettsider, branding og digital strategi. Ta kontakt for oppdrag på stadigdesign.no">
-<meta property="og:image" content="https://stadigdesign.no/img/stadig-og.jpg">
+<meta property="og:image" content="https://stadigdesign.no/img/sofie.jpg">
 <meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:url" content="https://stadigdesign.no">
+<meta property="og:image:height" content="900">
+<meta property="og:url" content="https://stadigdesign.no/">
 <meta property="og:image:alt" content="Sofie Iversen - frilans webdesigner og UX designer i Norge">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sofie Iversen | Webdesigner Norge — Skandinavisk Design med Mening">
 <meta name="twitter:description" content="Frilans webdesigner basert i Norge. Nettsider, branding og digital strategi. Ta kontakt på stadigdesign.no">
-<meta name="twitter:image" content="https://stadigdesign.no/img/stadig-og.jpg">
+<meta name="twitter:image" content="https://stadigdesign.no/img/sofie.jpg">
+
+<link rel="canonical" href="https://stadigdesign.no/">
 
 <!-- Fonts: only load weights actually used -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1102,7 +1104,7 @@ footer a:hover { color: var(--text); }
   </section>
 
   <div class="about-image">
-    <img src="../img/sofie.jpg" alt="Sofie Iversen, grunnlegger av Stadig Design Studio" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
+    <img src="../img/sofie.jpg" alt="Sofie Iversen, grunnlegger av Stadig Design Studio" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;">
   </div>
 
   <div class="about-split">
@@ -1261,22 +1263,36 @@ document.querySelectorAll('form[data-netlify]').forEach(form => {
 </script>
 
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": ["Person", "ProfessionalService"],
-  "name": "Sofie Iversen",
-  "jobTitle": "Frilans webdesigner og UX designer",
-  "description": "Frilans webdesigner basert i Norge. Hjelper bedrifter og enkeltpersoner med nettsider, branding og digital strategi.",
-  "url": "https://stadigdesign.no",
-  "email": "sofie@stadigdesign.no",
-  "telephone": "+4799533398",
-  "brand": { "@type": "Brand", "name": "Stadig Design Studio" },
-  "areaServed": { "@type": "Country", "name": "Norge" },
-  "availableLanguage": "Norwegian",
-  "knowsAbout": ["webdesigner Norge", "frilans webdesigner", "skandinavisk design", "nettside design", "UX designer Norge", "logo design", "merkevarebygging"],
-  "serviceType": ["Webdesign", "Logo design", "Merkevarebygging", "UX design", "Nettside", "Branding"],
-  "sameAs": ["https://www.instagram.com/stadigdesign"]
-}
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://stadigdesign.no/#person",
+    "name": "Sofie Iversen",
+    "jobTitle": "Frilans webdesigner og UX designer",
+    "description": "Frilans webdesigner basert i Norge. Hjelper bedrifter og enkeltpersoner med nettsider, branding og digital strategi.",
+    "url": "https://stadigdesign.no",
+    "email": "sofie@stadigdesign.no",
+    "knowsAbout": ["Webdesign", "UX design", "Logo design", "Merkevarebygging", "Skandinavisk design"],
+    "worksFor": { "@type": "Organization", "@id": "https://stadigdesign.no/#organization" },
+    "sameAs": ["https://www.instagram.com/stadigdesign"]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": "https://stadigdesign.no/#organization",
+    "name": "Stadig Design Studio",
+    "url": "https://stadigdesign.no",
+    "email": "sofie@stadigdesign.no",
+    "description": "Frilans designstudio basert i Norge. Spesialisert på webdesign, logo og merkevarebygging for norske bedrifter.",
+    "areaServed": { "@type": "Country", "name": "Norge" },
+    "availableLanguage": "Norwegian",
+    "serviceType": ["Webdesign", "Logo design", "Merkevarebygging", "UX design", "Branding"],
+    "priceRange": "$$",
+    "sameAs": ["https://www.instagram.com/stadigdesign"],
+    "founder": { "@id": "https://stadigdesign.no/#person" }
+  }
+]
 </script>
 </body>
 </html>
