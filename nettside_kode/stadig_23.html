@@ -1233,7 +1233,7 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
 triggerFadeIns();
 
-document.querySelectorAll('form[data-netlify]').forEach(form => {
+document.querySelectorAll('form.contact-form').forEach(form => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
@@ -1241,12 +1241,16 @@ document.querySelectorAll('form[data-netlify]').forEach(form => {
     btn.textContent = 'Sender...';
     btn.disabled = true;
     try {
-      const res = await fetch('/', {
+      const data = new FormData(form);
+      data.append('access_key', '6ebf6495-82bc-4d25-82f4-794bbe5c91ad');
+      data.append('subject', 'Ny henvendelse fra stadigdesign.no');
+      data.append('from_name', 'Stadig Design Studio');
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
+        body: data
       });
-      if (res.ok) {
+      const json = await res.json();
+      if (json.success) {
         btn.textContent = 'Sendt! Vi tar kontakt snart.';
         btn.style.background = '#2a6040';
         form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
