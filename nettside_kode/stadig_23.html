@@ -1262,6 +1262,7 @@ document.querySelectorAll('form.contact-form').forEach(form => {
       });
       const json = await res.json();
       if (json.success) {
+        gtag('event', 'conversion', {'send_to': 'AW-18184205327/mNYbCKmE6bIcEI_o895D'});
         btn.textContent = 'Sendt! Vi tar kontakt snart.';
         btn.style.background = '#2a6040';
         form.querySelectorAll('input, textarea, select').forEach(el => el.value = '');
