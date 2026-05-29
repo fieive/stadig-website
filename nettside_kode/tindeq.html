@@ -162,11 +162,11 @@ body{font-family:'Montserrat',sans-serif;background:var(--tq-bg);color:var(--tq-
   box-shadow:0 32px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.05);
 }
 .phone-frame img{
-  width:100%;
+  /* Clip 14px from all sides to remove grey screenshot borders baked into the image */
   display:block;
-  /* Slight scale up hides any residual grey edge from PDF export */
-  transform:scale(1.02);
-  transform-origin:center;
+  width:calc(100% + 28px);
+  margin:-14px;
+  max-width:none;
 }
 .phone-caption{
   font-size:10px;letter-spacing:.18em;text-transform:uppercase;
