@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18184205327"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18184205327');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tindeq Progressor – Prosjekt av Stadig Design Studio</title>
+<meta name="description" content="Tindeq Progressor er et UI/UX redesignprosjekt for dynamometerapp. Designet av Stadig Design Studio i Figma for klatrere og fysioterapeuter.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://stadigdesign.no/nettside_kode/tindeq.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tindeq Progressor – Prosjekt av Stadig Design Studio">
+<meta property="og:description" content="UI/UX redesign for dynamometerapp — designet i Figma for klatrere og fysioterapeuter.">
+<meta property="og:url" content="https://stadigdesign.no/nettside_kode/tindeq.html">
+<meta property="og:site_name" content="Stadig Design Studio">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tq-dark: #091522;
+  --tq-mid: #0F1F30;
+  --tq-card: #243242;
+  --tq-slate: #3F4D5B;
+  --tq-orange: #DD9A35;
+  --tq-teal: #16AFAE;
+  --tq-blue: #006DFF;
+  --tq-bg: #F0EEEA;
+  --tq-alt: #E6E3DE;
+  --tq-border: rgba(9,21,34,0.1);
+  --tq-muted: rgba(9,21,34,0.5);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--tq-bg);color:var(--tq-dark);font-weight:300;overflow-x:hidden;}
+
+/* BACK BUTTON */
+.back-btn{
+  position:fixed;top:28px;left:48px;z-index:100;
+  display:flex;align-items:center;gap:8px;
+  font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(240,238,234,.65);
+  background:rgba(9,21,34,.75);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(240,238,234,.1);
+  border-radius:3px;padding:10px 22px;cursor:pointer;transition:color .3s;
+}
+.back-btn::before{content:'←';font-size:14px;}
+.back-btn:hover{color:#fff;}
+
+/* ─── HERO ─── */
+.tq-hero{
+  min-height:100vh;background:var(--tq-dark);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 80px 100px;position:relative;overflow:hidden;
+}
+.tq-hero::before{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse at 75% 15%, rgba(22,175,174,.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 15% 85%, rgba(221,154,53,.05) 0%, transparent 50%);
+  pointer-events:none;
+}
+.tq-hero::after{
+  content:'';position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(0deg,transparent,transparent 59px,rgba(240,238,234,.018) 59px,rgba(240,238,234,.018) 60px),
+    repeating-linear-gradient(90deg,transparent,transparent 59px,rgba(240,238,234,.018) 59px,rgba(240,238,234,.018) 60px);
+  pointer-events:none;
+}
+.tq-label{
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--tq-teal);margin-bottom:24px;font-weight:600;position:relative;z-index:1;
+}
+.tq-hero h1{
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:clamp(52px,9vw,120px);line-height:.95;
+  color:var(--tq-bg);margin-bottom:8px;
+  text-transform:uppercase;letter-spacing:-.03em;position:relative;z-index:1;
+}
+.tq-hero h1 em{color:var(--tq-orange);font-style:normal;}
+.tq-hero-sub{
+  font-size:13px;color:rgba(240,238,234,.3);font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;margin-bottom:56px;
+  position:relative;z-index:1;
+}
+.tq-meta{display:flex;align-items:center;gap:44px;position:relative;z-index:1;}
+.tq-meta-item{display:flex;flex-direction:column;gap:6px;}
+.tq-meta-item span:first-child{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,238,234,.28);font-weight:500;
+}
+.tq-meta-item span:last-child{font-size:13px;color:rgba(240,238,234,.8);font-weight:400;}
+.tq-divider{width:1px;height:36px;background:rgba(240,238,234,.1);}
+
+/* ─── INTRO ─── */
+.tq-intro{
+  padding:120px 80px;
+  display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+}
+.tq-intro-label{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--tq-orange);margin-bottom:20px;font-weight:600;
+}
+.tq-intro h2{
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:clamp(20px,2.6vw,34px);line-height:1.15;
+  color:var(--tq-dark);text-transform:uppercase;letter-spacing:-.01em;
+}
+.tq-intro p{font-size:15px;line-height:1.9;color:var(--tq-muted);margin-top:20px;}
+.tq-intro p + p{margin-top:14px;}
+.tq-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;}
+.tq-tag{
+  padding:7px 16px;border-radius:2px;border:1px solid var(--tq-border);
+  font-size:10px;letter-spacing:.12em;color:var(--tq-muted);
+  font-weight:600;text-transform:uppercase;
+}
+
+/* ─── GENERIC SECTION ─── */
+.tq-sec{padding:80px 80px;}
+.tq-sec-hdr{display:flex;align-items:baseline;gap:18px;margin-bottom:52px;}
+.tq-sec-num{font-size:10px;letter-spacing:.2em;color:var(--tq-teal);font-weight:700;text-transform:uppercase;}
+.tq-sec-title{
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:clamp(16px,1.8vw,22px);color:var(--tq-dark);
+  text-transform:uppercase;letter-spacing:.04em;
+}
+
+/* ─── COLOR PALETTE ─── */
+.color-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;}
+.color-swatch{border-radius:4px;overflow:hidden;border:1px solid var(--tq-border);}
+.color-block{height:72px;}
+.color-info{padding:10px 12px;background:#fff;}
+.color-hex{font-size:10px;font-weight:700;letter-spacing:.06em;color:var(--tq-dark);}
+.color-name{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--tq-muted);margin-top:2px;}
+
+/* ─── PHONE SCREENS ─── */
+.screens-section{padding:80px 80px;background:var(--tq-dark);}
+.screens-section .tq-sec-num{color:var(--tq-teal);}
+.screens-section .tq-sec-title{color:rgba(240,238,234,.9);}
+
+.phone-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:end;}
+.phone-wrap{display:flex;flex-direction:column;gap:14px;}
+
+/* The frame clips PDF grey corners: background matches app dark blue, overflow hidden, border-radius */
+.phone-frame{
+  background:#091522;
+  border-radius:32px;
+  overflow:hidden;
+  position:relative;
+  box-shadow:0 32px 64px rgba(0,0,0,.55), 0 0 0 1px rgba(255,255,255,.05);
+}
+.phone-frame img{
+  width:100%;
+  display:block;
+  /* Slight scale up hides any residual grey edge from PDF export */
+  transform:scale(1.02);
+  transform-origin:center;
+}
+.phone-caption{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(240,238,234,.3);font-weight:600;text-align:center;
+}
+
+/* ─── LOOKBOOK ─── */
+.lookbook-section{padding:80px;background:var(--tq-mid);position:relative;overflow:hidden;}
+.lookbook-section::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    90deg,transparent,transparent 79px,
+    rgba(255,255,255,.018) 79px,rgba(255,255,255,.018) 80px
+  );
+  pointer-events:none;
+}
+.lookbook-inner{position:relative;z-index:1;}
+.lookbook-tag{
+  display:inline-block;font-size:10px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--tq-orange);margin-bottom:16px;
+}
+.lookbook-title{
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:clamp(30px,5vw,66px);color:rgba(240,238,234,.95);
+  text-transform:uppercase;letter-spacing:-.02em;line-height:1.0;margin-bottom:20px;
+}
+.lookbook-desc{font-size:15px;color:rgba(240,238,234,.4);line-height:1.85;max-width:540px;}
+
+/* Simulated component grid */
+.ui-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:2px;
+  margin-top:60px;border-radius:8px;overflow:hidden;background:rgba(255,255,255,.03);
+}
+.ui-cell{padding:36px 40px;background:var(--tq-card);}
+.ui-cell-label{
+  font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(240,238,234,.28);margin-bottom:24px;
+}
+
+/* Sim elements */
+.sim-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  border-radius:30px;padding:13px 32px;
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;
+  letter-spacing:.04em;margin-bottom:12px;cursor:default;
+}
+.sim-btn.orange{background:var(--tq-orange);color:#fff;}
+.sim-btn.outline{
+  background:transparent;color:rgba(240,238,234,.65);
+  border:1px solid rgba(240,238,234,.15);border-radius:4px;
+  padding:10px 24px;font-size:12px;
+}
+.sim-toggle{
+  display:flex;background:rgba(9,21,34,.6);border-radius:4px;overflow:hidden;
+  margin-bottom:14px;width:fit-content;
+}
+.sim-t{
+  padding:9px 22px;font-family:'Montserrat',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(240,238,234,.35);cursor:default;
+}
+.sim-t.on{background:var(--tq-blue);color:#fff;}
+.sim-t.teal{background:var(--tq-teal);color:#fff;}
+.sim-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;}
+.sim-chip{
+  padding:5px 14px;border-radius:20px;font-size:10px;
+  font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:default;
+}
+.sim-chip.orange{background:rgba(221,154,53,.16);color:var(--tq-orange);}
+.sim-chip.teal{background:rgba(22,175,174,.16);color:var(--tq-teal);}
+.sim-chip.blue{background:rgba(0,109,255,.16);color:var(--tq-blue);}
+
+.sim-stat{display:flex;flex-direction:column;gap:2px;margin-bottom:18px;}
+.sim-stat-lbl{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,238,234,.35);font-weight:600;}
+.sim-stat-row{display:flex;align-items:baseline;gap:6px;}
+.sim-stat-val{font-size:30px;font-weight:700;color:var(--tq-orange);letter-spacing:-.02em;}
+.sim-stat-val.teal{color:var(--tq-teal);}
+.sim-stat-unit{font-size:12px;color:rgba(240,238,234,.4);}
+
+.sim-input{
+  display:block;width:100%;
+  background:transparent;border:none;
+  border-bottom:1px solid rgba(240,238,234,.18);
+  padding:10px 0;margin-bottom:14px;
+  font-family:'Montserrat',sans-serif;font-size:13px;
+  color:rgba(240,238,234,.7);font-weight:400;cursor:default;
+}
+
+/* ─── PROCESS ─── */
+.proc-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:2px;background:var(--tq-border);border-radius:4px;overflow:hidden;
+}
+.proc-cell{padding:40px 36px;background:var(--tq-bg);}
+.proc-num{
+  display:block;font-size:10px;letter-spacing:.18em;
+  color:var(--tq-orange);font-weight:700;margin-bottom:18px;text-transform:uppercase;
+}
+.proc-cell h4{
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;color:var(--tq-dark);
+}
+.proc-cell p{font-size:14px;color:var(--tq-muted);line-height:1.85;}
+
+/* ─── CTA ─── */
+.tq-cta{padding:120px 80px;background:var(--tq-dark);text-align:center;}
+.tq-cta h2{
+  font-family:'Montserrat',sans-serif;font-weight:700;
+  font-size:clamp(24px,4vw,48px);color:var(--tq-bg);
+  margin-bottom:16px;text-transform:uppercase;letter-spacing:-.02em;
+}
+.tq-cta p{font-size:15px;color:rgba(240,238,234,.38);margin-bottom:40px;}
+.btn-tq{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:14px 36px;border-radius:3px;
+  border:1px solid var(--tq-orange);background:transparent;
+  color:var(--tq-orange);font-family:'Montserrat',sans-serif;
+  font-size:11px;letter-spacing:.14em;font-weight:700;text-transform:uppercase;
+  cursor:pointer;text-decoration:none;transition:all .3s;
+}
+.btn-tq:hover{background:var(--tq-orange);color:var(--tq-dark);}
+
+/* ─── FOOTER ─── */
+.tq-footer{
+  padding:40px 80px;border-top:1px solid var(--tq-border);
+  display:flex;justify-content:space-between;align-items:center;
+}
+.tq-footer span{
+  font-size:10px;color:var(--tq-muted);letter-spacing:.12em;text-transform:uppercase;font-weight:500;
+}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:900px){
+  .back-btn{left:20px;top:20px;}
+  .tq-hero{padding:0 28px 80px;}
+  .tq-meta{flex-wrap:wrap;gap:20px;}
+  .tq-intro{grid-template-columns:1fr;padding:72px 28px;gap:36px;}
+  .tq-sec{padding:56px 28px;}
+  .screens-section{padding:56px 28px;}
+  .lookbook-section{padding:56px 28px;}
+  .color-grid{grid-template-columns:repeat(3,1fr);}
+  .phone-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+  .ui-grid{grid-template-columns:1fr;}
+  .proc-strip{grid-template-columns:1fr;}
+  .tq-cta{padding:80px 28px;}
+  .tq-footer{padding:28px;flex-direction:column;gap:10px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<button class="back-btn" onclick="window.opener ? window.close() : history.back()">Tilbake</button>
+
+<!-- ─── HERO ─── -->
+<section class="tq-hero">
+  <div>
+    <p class="tq-label">Prosjekt — App UI/UX Redesign</p>
+    <h1>Tindeq<br><em>Progressor</em></h1>
+    <p class="tq-hero-sub">Dynamometer App &nbsp;·&nbsp; Figma Redesign</p>
+    <div class="tq-meta">
+      <div class="tq-meta-item">
+        <span>Kategori</span>
+        <span>App UI / UX Design</span>
+      </div>
+      <div class="tq-divider"></div>
+      <div class="tq-meta-item">
+        <span>Verktøy</span>
+        <span>Figma</span>
+      </div>
+      <div class="tq-divider"></div>
+      <div class="tq-meta-item">
+        <span>Rolle</span>
+        <span>UI / UX Designer</span>
+      </div>
+      <div class="tq-divider"></div>
+      <div class="tq-meta-item">
+        <span>Målgruppe</span>
+        <span>Klatrere &amp; Fysioterapeuter</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INTRO ─── -->
+<section class="tq-intro">
+  <div>
+    <p class="tq-intro-label">Om prosjektet</p>
+    <h2>Et råere grensesnitt<br>for folk som mener<br>alvor med prestasjon.</h2>
+  </div>
+  <div>
+    <p>Tindeq er en norsk teknologibedrift som lager Progressor — en avansert dynamometer brukt av klatrere og fysioterapeuter for å måle og trene fingerstyrke, RFD (rate of force development) og utholdenhet. Appen viser sanntidsdata under treningsøkter og medisinske tester.</p>
+    <p>Oppgaven var å redesigne appens brukergrensesnitt i Figma. Appen var allerede ferdig utviklet av teamets utvikler; min rolle var å tegne opp et nytt visuelt system — med fokus på lesbarhet under press, rask navigasjon og en estetikk som speiler brukernes miljø: sporty, presist og uten støy.</p>
+    <div class="tq-tags">
+      <span class="tq-tag">Figma</span>
+      <span class="tq-tag">UI Design</span>
+      <span class="tq-tag">UX Design</span>
+      <span class="tq-tag">App Redesign</span>
+      <span class="tq-tag">Komponentbibliotek</span>
+      <span class="tq-tag">Mørkt tema</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── COLOR PALETTE ─── -->
+<section class="tq-sec" style="background:var(--tq-alt);">
+  <div class="tq-sec-hdr">
+    <span class="tq-sec-num">01</span>
+    <h3 class="tq-sec-title">Fargepaletten</h3>
+  </div>
+  <div class="color-grid">
+    <div class="color-swatch">
+      <div class="color-block" style="background:#091522;"></div>
+      <div class="color-info"><div class="color-hex">#091522</div><div class="color-name">Dark Navy — Primær BG</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#0F1F30;"></div>
+      <div class="color-info"><div class="color-hex">#0F1F30</div><div class="color-name">Deep Navy — Sekundær</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#243242;"></div>
+      <div class="color-info"><div class="color-hex">#243242</div><div class="color-name">Navy — Kort / Panel</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#DD9A35;"></div>
+      <div class="color-info"><div class="color-hex">#DD9A35</div><div class="color-name">Orange — Brand / CTA</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#16AFAE;"></div>
+      <div class="color-info"><div class="color-hex">#16AFAE</div><div class="color-name">Teal — Aksent / Aktiv</div></div>
+    </div>
+    <div class="color-swatch">
+      <div class="color-block" style="background:#006DFF;"></div>
+      <div class="color-info"><div class="color-hex">#006DFF</div><div class="color-name">Blue — Interaktiv</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── APP SCREENS ─── -->
+<section class="screens-section">
+  <div class="tq-sec-hdr">
+    <span class="tq-sec-num">02</span>
+    <h3 class="tq-sec-title">Appskjermer</h3>
+  </div>
+  <div class="phone-grid">
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_login.png" alt="Tindeq innlogging">
+      </div>
+      <p class="phone-caption">Innlogging</p>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_session.png" alt="Tindeq aktiv økt">
+      </div>
+      <p class="phone-caption">Aktiv økt</p>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_rfd.png" alt="Tindeq RFD innstillinger">
+      </div>
+      <p class="phone-caption">RFD — Innstillinger</p>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_results.png" alt="Tindeq testresultat">
+      </div>
+      <p class="phone-caption">Testresultat</p>
+    </div>
+  </div>
+  <div class="phone-grid" style="margin-top:20px;">
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_history.png" alt="Tindeq historikk">
+      </div>
+      <p class="phone-caption">Historikk</p>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_repeaters.png" alt="Tindeq repeaters">
+      </div>
+      <p class="phone-caption">Repeaters</p>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_custom.png" alt="Tindeq custom session">
+      </div>
+      <p class="phone-caption">Custom Session</p>
+    </div>
+    <div class="phone-wrap">
+      <div class="phone-frame">
+        <img src="../img/tindeq_setup.png" alt="Tindeq oppsett">
+      </div>
+      <p class="phone-caption">Oppsett</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── UI LOOKBOOK ─── -->
+<section class="lookbook-section">
+  <div class="lookbook-inner">
+    <p class="lookbook-tag">UI Lookbook</p>
+    <h2 class="lookbook-title">Komponenter<br>&amp; System</h2>
+    <p class="lookbook-desc">Et fullstendig komponentbibliotek ble utviklet i Figma — knapper, inngangsfelt, diagrammer, navigasjonselementer og skjermtilstander. Et konsekvent system som skalerer og gir utviklere et klart og presist grunnlag å bygge på.</p>
+
+    <div class="ui-grid">
+      <div class="ui-cell">
+        <p class="ui-cell-label">Knapper &amp; Handlinger</p>
+        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start;">
+          <div class="sim-btn orange">Start session</div>
+          <div class="sim-btn outline">New session</div>
+        </div>
+      </div>
+      <div class="ui-cell">
+        <p class="ui-cell-label">Tilstander &amp; Modes</p>
+        <div class="sim-toggle">
+          <div class="sim-t on">Work</div>
+          <div class="sim-t teal">Pause</div>
+        </div>
+        <div class="sim-chips">
+          <span class="sim-chip orange">RFD 100ms</span>
+          <span class="sim-chip teal">Left</span>
+          <span class="sim-chip blue">Right</span>
+        </div>
+      </div>
+      <div class="ui-cell">
+        <p class="ui-cell-label">Data &amp; Statistikk</p>
+        <div class="sim-stat">
+          <span class="sim-stat-lbl">Peak Force</span>
+          <div class="sim-stat-row">
+            <span class="sim-stat-val">3.4</span>
+            <span class="sim-stat-unit">kg</span>
+          </div>
+        </div>
+        <div class="sim-stat">
+          <span class="sim-stat-lbl">RFD 100ms</span>
+          <div class="sim-stat-row">
+            <span class="sim-stat-val teal">2.5</span>
+            <span class="sim-stat-unit">kg/s</span>
+          </div>
+        </div>
+      </div>
+      <div class="ui-cell">
+        <p class="ui-cell-label">Inngangsfelt</p>
+        <input class="sim-input" type="text" value="Rehab with Eri" readonly>
+        <input class="sim-input" type="text" value="10.00" readonly>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PROCESS ─── -->
+<section class="tq-sec">
+  <div class="tq-sec-hdr">
+    <span class="tq-sec-num">03</span>
+    <h3 class="tq-sec-title">Prosess</h3>
+  </div>
+  <div class="proc-strip">
+    <div class="proc-cell">
+      <span class="proc-num">Steg 01</span>
+      <h4>Analyse &amp; Research</h4>
+      <p>Kartlegging av eksisterende app, brukerflyt og smertepunkter. Forståelse av domenet — klatring, fysioterapi og styrketesting — og hva brukerne faktisk trenger under en treningsøkt eller test.</p>
+    </div>
+    <div class="proc-cell">
+      <span class="proc-num">Steg 02</span>
+      <h4>Systemdesign i Figma</h4>
+      <p>Oppbygging av komponentbibliotek, fargevariabler og typografisk skala. Wireframes og high-fidelity design for alle skjermtilstander — fra innlogging til aktiv økt, innstillinger og resultater.</p>
+    </div>
+    <div class="proc-cell">
+      <span class="proc-num">Steg 03</span>
+      <h4>Visuell Profil</h4>
+      <p>Mørk, rå og presis — designsystemet ble tilpasset et sporty brukermiljø med høy lesbarhet, tydelig hierarki og konsekvent bruk av farger for navigasjon og status.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CTA ─── -->
+<section class="tq-cta">
+  <h2>Interessert i et<br>samarbeid?</h2>
+  <p>Ta kontakt for å høre mer om tilgjengelige oppdrag.</p>
+  <a href="mailto:sofieemiv@gmail.com" class="btn-tq">Ta kontakt</a>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer class="tq-footer">
+  <span>Stadig Design Studio</span>
+  <span>Tindeq — App UI/UX Redesign</span>
+</footer>
+
+</body>
+</html>

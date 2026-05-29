@@ -1036,11 +1036,15 @@ footer a:hover { color: var(--text); }
       <div class="project-name">RIHA Forlag</div>
       <div class="project-desc">Landingsside for et uavhengig norsk forlag. Litterær estetikk og naturlig ro for å fremheve forfatterens stemme.</div>
     </div>
-    <div class="project-card fade-in" style="opacity:0.4;cursor:default;">
-      <div class="project-img"><span style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);">Kommer snart</span></div>
-      <div class="project-tags"><span class="project-tag">Nettside</span></div>
-      <div class="project-name">Nytt prosjekt</div>
-      <div class="project-desc">Mer arbeid kommer.</div>
+    <div class="project-card fade-in" onclick="openTindeq()">
+      <div class="project-img" style="background:#091522;display:flex;align-items:center;justify-content:center;gap:10px;">
+        <span style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:rgba(255,255,255,0.15);letter-spacing:0.06em;text-transform:uppercase;">TINDEQ</span>
+        <span style="width:6px;height:6px;border-radius:50%;background:#16AFAE;flex-shrink:0;"></span>
+        <span style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;color:#DD9A35;letter-spacing:0.14em;text-transform:uppercase;">PROGRESSOR</span>
+      </div>
+      <div class="project-tags"><span class="project-tag">App</span><span class="project-tag">UI/UX Design</span><span class="project-tag">Figma</span></div>
+      <div class="project-name">Tindeq Progressor</div>
+      <div class="project-desc">UI/UX redesign av dynamometerapp for klatrere og fysioterapeuter. Mørkt, presist og råt grensesnitt.</div>
     </div>
   </div>
 
@@ -1201,6 +1205,7 @@ footer a:hover { color: var(--text); }
 function openNordquest() { window.open('/nettside_kode/nordquest.html', '_blank'); }
 function openIversenBygg() { window.open('/nettside_kode/iversen_bygg.html', '_blank'); }
 function openRihaForlag() { window.open('/nettside_kode/riha_forlag.html', '_blank'); }
+function openTindeq() { window.open('/nettside_kode/tindeq.html', '_blank'); }
 
 const pageTitles = {
   'design': 'Stadig - Norsk Design Studio | Logo, nettside og merkevare',
